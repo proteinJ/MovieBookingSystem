@@ -1,0 +1,73 @@
+package com.moviebooking.domain;
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+
+@Getter 
+@Setter 
+@NoArgsConstructor 
+@AllArgsConstructor
+public class Movie {
+    public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getGenre() {
+		return genre;
+	}
+	public void setGenre(String genre) {
+		this.genre = genre;
+	}
+	public int getRunningTime() {
+		return runningTime;
+	}
+	public void setRunningTime(int runningTime) {
+		this.runningTime = runningTime;
+	}
+	public String getReleaseDate() {
+		return releaseDate;
+	}
+	public void setReleaseDate(String releaseDate) {
+		this.releaseDate = releaseDate;
+	}
+	public float getStar() {
+		return star;
+	}
+	public void setStar(float star) {
+		this.star = star;
+	}
+	
+	public String getPosterUrl() {
+		return posterUrl;
+	}
+	public String getLinkUrl() {
+		return linkUrl;
+	}
+	public void setPosterUrl(String posterUrl) {
+		this.posterUrl = posterUrl;
+	}
+	public void setLinkUrl(String linkUrl) {
+		this.linkUrl = linkUrl;
+	}
+
+	private Long id;
+    private String title;
+    private String genre;
+    private int runningTime;
+    private String releaseDate;
+    private float star;
+    private String posterUrl;
+    private String linkUrl;
+    
+
+}

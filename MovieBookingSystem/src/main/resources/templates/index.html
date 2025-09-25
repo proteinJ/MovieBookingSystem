@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>영화 예매 사이트</title>
+    <link rel="stylesheet" th:href="@{/css/index.css}">
+</head>
+<body>
+    <main>
+        <section class="movies-grid">
+            <div class="movie-card" th:each="movie : ${movieList}">
+                <div class="movie-info">
+					
+                    <h3 class="movie-title" th:text="${movie.title}">영화 제목</h3>
+                    <ul class="movie-detail">
+                        <li>
+                            <span class="label">개요</span>
+                            <span th:text="${movie.genre}">장르</span>
+                            <span>·</span>
+                            <span th:text="${movie.runningTime} + '분'">러닝타임</span>
+                        </li>
+                        <li>
+                            <span class="label">개봉</span>
+                            <span th:text="${movie.releaseDate}">2025.09.24.</span>
+                            <span class="star">★</span>
+                            <span class="score" th:text="${movie.star}">9.61</span>
+                        </li>
+                    </ul>
+                </div>
+				<div class="movie-poster">
+				    <img th:src="${movie.posterUrl}" alt="포스터" />
+				</div>
+                <div class="movie-footer">
+                    <a th:href="${movie.linkUrl}" class="trailer-btn">
+                        <svg width="16" height="16" fill="#43b04b" style="vertical-align:middle;" xmlns="http://www.w3.org/2000/svg"><path d="M4 2.5v11l9-5.5-9-5.5z"/></svg>
+                        예고편
+                    </a>
+                    <a th:href="@{'/reserve/' + ${movie.id}}" class="reserve-btn">예매하기</a>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
