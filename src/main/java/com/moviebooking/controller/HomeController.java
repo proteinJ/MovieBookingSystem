@@ -11,7 +11,6 @@ import com.moviebooking.repository.MovieRepository;
 public class HomeController {
     private final MovieRepository movieRepository;
 
-    // 생성자 주입 방식
     public HomeController(MovieRepository movieRepository) {
         this.movieRepository = movieRepository;
     }

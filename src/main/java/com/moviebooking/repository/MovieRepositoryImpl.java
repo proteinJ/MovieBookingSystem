@@ -67,10 +67,13 @@ public class MovieRepositoryImpl implements MovieRepository {
 		listOfMovies.add(movie3);
 		listOfMovies.add(movie4);
 	}
+	
+	@Override
 	public List<Movie> getAllMovieList() {
 		return listOfMovies;
 	}
 	
+	@Override
 	public Optional<Movie> findById(Long id) {
 		return listOfMovies.stream().filter(movie -> movie.getId().equals(id)).findFirst();
 	}

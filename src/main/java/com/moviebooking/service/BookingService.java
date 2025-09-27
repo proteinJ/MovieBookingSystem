@@ -1,5 +1,12 @@
 package com.moviebooking.service;
 
-public interface BookingService {
+import java.util.List;
 
+import com.moviebooking.domain.Booking;
+import com.moviebooking.form.BookingForm;
+
+public interface BookingService {
+	Booking saveBooking(Long movieId, BookingForm form);
+	
+	List<Booking> getAllBookings();
 }

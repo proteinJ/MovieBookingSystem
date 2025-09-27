@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>예약 성공</title>
+</head>
+<body>
+    <h1>예약이 성공적으로 완료되었습니다!</h1>
+    <p>예약번호: <span th:text="${success.id}"></span></p>
+    <p>영화번호: <span th:text="${success.movieId}"></span></p>
+    <p>좌석번호: <span th:text="${success.seatNumber}"></span></p>
+    <p>예약자명: <span th:text="${success.customerName}"></span></p>
+    <p>결제수단: <span th:text="${success.paymentMethod}"></span></p>
+    <a href="/movies">돌아가기</a>
+</body>
+</html>

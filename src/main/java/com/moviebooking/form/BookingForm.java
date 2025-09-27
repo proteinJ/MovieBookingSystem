@@ -1,16 +1,25 @@
 package com.moviebooking.form;
 
 public class BookingForm {
-	private String userName;
+	private String customerName;
 	private String seatNumber;
+	private String PaymentMethod;
 	
+	public String getPaymentMethod() {
+		return PaymentMethod;
+	}
+
+	public void setPaymentMethod(String paymentMethod) {
+		PaymentMethod = paymentMethod;
+	}
+
 	public BookingForm() {}
 	
-	public String getUserName() {
-		return userName;
+	public String getCustomerName() {
+		return customerName;
 	}
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setCustomerName(String userName) {
+		this.customerName = userName;
 	}
 	public String getSeatNumber() {
 		return seatNumber;

@@ -2,7 +2,7 @@ package com.moviebooking.domain;
 
 public class Booking {
 	private Long id;
-    private int MovieID;
+    private Long MovieID;
     private String seatNumber;
     private String customerName;
     private String PaymentMethod;
@@ -12,10 +12,10 @@ public class Booking {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public int getMovieID() {
+	public Long getMovieID() {
 		return MovieID;
 	}
-	public void setMovieID(int movieID) {
+	public void setMovieID(Long movieID) {
 		MovieID = movieID;
 	}
 	public String getSeatNumber() {
