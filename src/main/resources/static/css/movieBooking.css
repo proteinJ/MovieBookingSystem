@@ -1,0 +1,58 @@
+body {
+    background: #f8f9fa;
+    font-family: 'Segoe UI', '맑은 고딕', Arial, sans-serif;
+}
+.container {
+    max-width: 500px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 30px 40px;
+}
+h1 {
+    margin-bottom: 10px;
+}
+.movie-info {
+    margin-bottom: 25px;
+    font-size: 1.1em;
+}
+.seats {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+.seats label {
+    padding: 6px 12px;
+    background: #e0e0e0;
+    border-radius: 6px;
+    cursor: pointer;
+    user-select: none;
+    margin-right: 4px;
+}
+.seats input[type="checkbox"] {
+    margin-right: 4px;
+}
+.user-info {
+    margin-bottom: 16px;
+}
+.book-btn {
+    display: inline-block;
+    padding: 8px 20px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.book-btn:hover {
+    background: #0056b3;
+}
+#result-msg {
+    margin-top: 16px;
+    font-weight: bold;
+    color: #007bff;
+}

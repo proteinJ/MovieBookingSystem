@@ -1,9 +1,9 @@
 package com.moviebooking.domain;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter 
 @Setter 
@@ -59,7 +59,19 @@ public class Movie {
 	public void setLinkUrl(String linkUrl) {
 		this.linkUrl = linkUrl;
 	}
-
+	public String getEnglishTitle() {
+			return englishTitle;
+	}
+	public void setEnglishTitle(String englishTitle) {
+		this.englishTitle = englishTitle;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	
 	private Long id;
     private String title;
     private String genre;
@@ -68,6 +80,8 @@ public class Movie {
     private float star;
     private String posterUrl;
     private String linkUrl;
-    
+    private String englishTitle;
+    private String description;
+	
 
 }

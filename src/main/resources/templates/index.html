@@ -23,7 +23,7 @@
                             <span class="label">개봉</span>
                             <span th:text="${movie.releaseDate}">2025.09.24.</span>
                             <span class="star">★</span>
-                            <span class="score" th:text="${movie.star}">9.61</span>
+                            <span class="score" th:text="${movie.star}">0.00</span>
                         </li>
                     </ul>
                 </div>
@@ -35,7 +35,7 @@
                         <svg width="16" height="16" fill="#43b04b" style="vertical-align:middle;" xmlns="http://www.w3.org/2000/svg"><path d="M4 2.5v11l9-5.5-9-5.5z"/></svg>
                         예고편
                     </a>
-                    <a th:href="@{'/reserve/' + ${movie.id}}" class="reserve-btn">예매하기</a>
+                    <a th:href="@{'/movies/booking/' + ${movie.id}}" class="reserve-btn">예매하기</a>
                 </div>
             </div>
         </section>

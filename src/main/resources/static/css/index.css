@@ -136,15 +136,3 @@ main {
     background: #d0f5df;
     color: #1b1b1b;
 }
-
-@media (max-width: 850px) {
-    .movies-grid {
-        grid-template-columns: 1fr;
-        gap: 22px 0;
-    }
-    .movie-poster {
-        position: static;
-        display: block;
-        margin: 10px auto 0 auto;
-    }
-}

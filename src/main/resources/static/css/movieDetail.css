@@ -1,0 +1,123 @@
+body {
+    background: #faf8f7;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.movie-detail-container {
+    max-width: 740px;
+    margin: 30px auto;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 2px 8px rgba(60, 40, 40, 0.08);
+    overflow: hidden;
+}
+.header {
+    background: #884444;
+    color: #fff;
+    padding: 26px 32px 12px 32px;
+}
+.main-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+.subtitle {
+    font-size: 1.1rem;
+    font-weight: 400;
+    opacity: 0.85;
+}
+.tabs {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+}
+.tab {
+    padding: 7px 18px;
+    border-radius: 18px;
+    background: #a97c7c;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.tab.active {
+    background: #fff;
+    color: #884444;
+}
+.info-section {
+    display: flex;
+    gap: 26px;
+    padding: 32px;
+}
+.movie-info {
+    flex: 1;
+}
+.movie-poster {
+    width: 144px;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.info-list {
+    font-size: 1.07rem;
+}
+.info-list dt {
+    float: left;
+    width: 78px;
+    color: #884444;
+    font-weight: 500;
+    clear: left;
+}
+.info-list dd {
+    margin: 0 0 7px 80px;
+}
+.info-actions {
+    margin-top: 15px;
+    display: flex;
+    gap: 14px;
+}
+.btn-reserve {
+	text-decoration: none;
+    background: #e3f1e0;
+    color: #266e3c;
+    border: none;
+    padding: 8px 30px;
+    border-radius: 7px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.btn-like {
+    background: none;
+    border: none;
+    color: #c04d4d;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.movie-description-section {
+    padding: 26px 32px 32px 32px;
+    border-top: 1px solid #ececec;
+}
+.movie-description-section h3 {
+    margin: 0 0 12px 0;
+    color: #884444;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.movie-description {
+    font-size: 1.06rem;
+    line-height: 1.7;
+    color: #333;
+}
+.star {
+    color: #e43e3e;
+    margin: 0 2px 0 10px;
+    font-size: 1.03em;
+}
+.score {
+    color: #e43e3e;
+    font-weight: 600;
+    font-size: 1.03em;
+    margin-left: 2px;
+}
