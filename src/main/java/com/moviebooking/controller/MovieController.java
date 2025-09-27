@@ -28,6 +28,11 @@ public class MovieController {
     }
     
     @PostMapping("/booking/{id}")
+    public String postBooking(@PathVariable("id") Long id, Model model) {
+        // 예시: 예약 처리 로직
+        // model.addAttribute("movie", movieService.getMovieDetail(id));
+        return "movieBooking";
+    }
     
     @GetMapping("/{id}")
     public String getMovieDetail1(@PathVariable("id") Long id, Model model) {

@@ -11,7 +11,9 @@
             <div class="movie-card" th:each="movie : ${movieList}">
                 <div class="movie-info">
 					
-                    <h3 class="movie-title" th:text="${movie.title}">영화 제목</h3>
+					<a th:href="@{'/movies/' + ${movie.id}}">
+					  <h3 class="movie-title" th:text="${movie.title}">영화 제목</h3>
+					</a>
                     <ul class="movie-detail">
                         <li>
                             <span class="label">개요</span>
@@ -28,7 +30,9 @@
                     </ul>
                 </div>
 				<div class="movie-poster">
-				    <img th:src="${movie.posterUrl}" alt="포스터" />
+					<a th:href="@{'/movies/' + ${movie.id}}">
+					    <img th:src="${movie.posterUrl}" alt="포스터" />
+					  </a>
 				</div>
                 <div class="movie-footer">
                     <a th:href="${movie.linkUrl}" class="trailer-btn">
