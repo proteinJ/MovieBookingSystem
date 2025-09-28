@@ -1,16 +1,48 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>예약 성공</title>
+    <title>MegaBox - 예매 완료</title>
+    <link rel="stylesheet" href="/css/bookingSuccess.css">
 </head>
 <body>
-    <h1>예약이 성공적으로 완료되었습니다!</h1>
-    <p>예약번호: <span th:text="${success.id}"></span></p>
-    <p>영화번호: <span th:text="${success.movieId}"></span></p>
-    <p>좌석번호: <span th:text="${success.seatNumber}"></span></p>
-    <p>예약자명: <span th:text="${success.customerName}"></span></p>
-    <p>결제수단: <span th:text="${success.paymentMethod}"></span></p>
-    <a href="/movies">돌아가기</a>
+    <h1 class="success-message">예매가 완료되었습니다.</h1>
+    <div class="ticket-container">	
+        <div class="ticket-img-section">
+            <img class="ticket-poster" th:src="${movie.posterUrl}" alt="영화 포스터" />
+        </div>
+        <div class="ticket-title-section">
+            <div class="ticket-date-box">
+                <span class="ticket-date">11/5(화) 오늘</span>
+            </div>
+            <div class="ticket-movie-title" th:text="${movie.title}">영화 제목</div>
+            <div class="ticket-movie-eng-title" th:text="${movie.englishTitle}">영어 제목</div>
+        </div>
+        <div class="ticket-time-section">
+            <span class="ticket-time-start">19:30</span>
+            <span class="ticket-time-separator">~</span>
+            <span class="ticket-time-end">21:48</span>
+        </div>
+        <div class="ticket-info-table">
+            <div class="ticket-info-row">
+                <span class="ticket-info-label">고객명</span>
+                <span class="ticket-info-value" th:text="${booking.customerName}">홍길동</span>
+            </div>
+            <div class="ticket-info-row">
+                <span class="ticket-info-label">좌석</span>
+                <span class="ticket-info-value" th:text="${booking.seatNumber}">A12</span>
+            </div>
+            <div class="ticket-info-row">
+                <span class="ticket-info-label">결제수단</span>
+                <span class="ticket-info-value" th:text="${booking.paymentMethod}">카드</span>
+            </div>
+        </div>
+        <div class="ticket-notice-section">
+            <span class="ticket-notice">
+                - 입장 지연에 따른 관람 불편을 최소화하기 위해 영화는 10분 후 상영이 시작됩니다.<br>
+                - 영화 상영 시작시간 15분 전까지 취소가 가능하며, 취소확인문은 입장에 제한될 수 있습니다.
+            </span>
+        </div>
+    </div>
 </body>
 </html>

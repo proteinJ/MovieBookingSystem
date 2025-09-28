@@ -1,7 +1,5 @@
 package com.moviebooking.controller;
 
-import java.util.List;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,10 +9,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.moviebooking.domain.Booking;
+import com.moviebooking.domain.BookingRequest;
 import com.moviebooking.domain.Movie;
 import com.moviebooking.form.BookingForm;
+import com.moviebooking.form.PaymentForm;
 import com.moviebooking.service.BookingService;
 import com.moviebooking.service.MovieService;
+
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/movies")	
@@ -49,12 +51,45 @@ public class MovieController {
     
     @PostMapping("/booking/{id}")
     public String postBooking(@PathVariable("id") Long movieId,
-    						  @ModelAttribute BookingForm bookingForm,    						
+    						  @ModelAttribute BookingForm bookingForm,
+    						  HttpSession session,
     						  Model model) {   
-        Booking booking = bookingService.saveBooking(movieId, bookingForm);
-        model.addAttribute("success", booking);
+        BookingRequest bookingRequest = bookingService.saveBookingReq(movieId, bookingForm);
+        Movie movie = movieService.getMovieDetail(movieId);
         
-        return "bookingSuccess";
+        session.setAttribute("bookingRequest", bookingRequest);
+        model.addAttribute("success", bookingRequest);
+        model.addAttribute("movie", movie);
+        
+        return "redirect:/movies/payment";
+    }
+    
+    // 결제 페이지 
+    @GetMapping("/payment")
+    public String payments(HttpSession session, Model model) {
+    	BookingRequest bookingRequest = (BookingRequest) session.getAttribute("bookingRequest");
+    	
+    	model.addAttribute("bookingRequest", bookingRequest);
+    	model.addAttribute("paymentForm", new PaymentForm());
+    	
+    	return "payment";
+    }
+    
+    @PostMapping("/payment")
+    public String doPayments(HttpSession session,
+    						 @ModelAttribute PaymentForm paymentForm,
+    						 Model model) {
+    	BookingRequest bookingRequest = (BookingRequest) session.getAttribute("bookingRequest");
+    	Booking booking = bookingService.createBooking(bookingRequest, paymentForm);
+    	
+    	Long MovieID = bookingRequest.getMovieID();
+    	Movie movie = movieService.getMovieDetail(MovieID);
+    	
+    	session.removeAttribute("bookingRequest");
+    	model.addAttribute("movie", movie);
+    	model.addAttribute("booking", booking);
+    	
+    	return "bookingSuccess";
     }
 
 }

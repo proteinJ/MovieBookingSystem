@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>결제하기</title>
+    <link rel="stylesheet" href="/css/payment.css">
+</head>
+<body>
+    <div class="payment-wrapper">
+        <div class="payment-card">
+            <h2>결제 정보 확인</h2>
+            <div class="info-group">
+                <div>
+                    <span class="label">예매자 이름</span>
+                    <span th:text="${bookingRequest.customerName}">홍길동</span>
+                </div>
+                <div>
+                    <span class="label">좌석 번호</span>
+                    <span th:text="${bookingRequest.seatNumber}">A6</span>
+                </div>
+                <div>
+                    <span class="label">결제수단</span>
+                    <span th:text="${bookingRequest.paymentMethod}">카드</span>
+                </div>
+            </div>
+
+            <form th:action="@{/movies/payment}" th:object="${paymentForm}" method="post" class="payment-form">
+                <div class="form-row">
+                    <label for="paymentMethod">결제수단</label>
+                    <select id="paymentMethod" th:field="*{paymentMethod}">
+                        <option value="카드">카드</option>
+                        <option value="현금">현금</option>
+                    </select>
+                </div>
+                <div class="form-row" th:if="${paymentForm.paymentMethod == '카드'}">
+                    <label for="cardNumber">카드번호</label>
+                    <input type="text" id="cardNumber" th:field="*{cardNumber}" maxlength="16" placeholder="카드번호 입력"/>
+                </div>
+                <div class="form-row">
+                    <label>결제 금액</label>
+                    <span class="amount" th:text="${bookingRequest.totalAmount}">0</span>원                    
+                </div>
+                <button type="submit" class="submit-btn">결제하기</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

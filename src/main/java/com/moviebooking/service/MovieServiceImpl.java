@@ -22,8 +22,7 @@ public class MovieServiceImpl implements MovieService {
     public Movie getMovieDetail(Long id) {
 		final Logger log = LoggerFactory.getLogger(MovieService.class);
 		log.info("영화 상세정보 요청: id={}", id);
-        return movieRepository.findById(id)
-            .orElseThrow(() -> new RuntimeException("영화를 찾을 수 없습니다."));
+        return movieRepository.findById(id).orElse(null);
     }
 }
 

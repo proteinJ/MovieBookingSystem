@@ -1,14 +1,7 @@
 package com.moviebooking.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import java.time.LocalTime;
 
-@Getter 
-@Setter 
-@NoArgsConstructor 
-@AllArgsConstructor
 public class Movie {
     public Long getId() {
 		return id;
@@ -72,6 +65,19 @@ public class Movie {
 		this.description = description;
 	}
 	
+	public LocalTime getStartTime() {
+		return startTime;
+	}
+	public void setStartTime(LocalTime startTime) {
+		this.startTime = startTime;
+	}
+	public LocalTime getEndTime() {
+		return endTime;
+	}
+	public void setEndTime(LocalTime endTime) {
+		this.endTime = endTime;
+	}
+
 	private Long id;
     private String title;
     private String genre;
@@ -82,6 +88,8 @@ public class Movie {
     private String linkUrl;
     private String englishTitle;
     private String description;
+	private LocalTime startTime;
+	private LocalTime endTime;
 	
 
 }

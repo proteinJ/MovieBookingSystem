@@ -13,7 +13,7 @@ main {
 .movies-grid {
     display: grid;
     grid-template-columns: repeat(2, 350px);
-    gap: 30px 24px;
+    gap: 30px 45px;
 }
 
 .movie-card {
@@ -24,6 +24,7 @@ main {
     flex-direction: column;
     padding: 20px 20px 16px 20px;
     min-height: 210px;
+	min-width: 330px;
     position: relative;
     transition: box-shadow 0.2s;
 }
@@ -34,6 +35,9 @@ main {
 
 .movie-info {
     margin-bottom: 10px;
+}
+.movie-info a {
+	text-decoration: none;
 }
 
 .movie-title {

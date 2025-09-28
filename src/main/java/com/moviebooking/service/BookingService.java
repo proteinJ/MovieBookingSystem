@@ -3,10 +3,15 @@ package com.moviebooking.service;
 import java.util.List;
 
 import com.moviebooking.domain.Booking;
+import com.moviebooking.domain.BookingRequest;
 import com.moviebooking.form.BookingForm;
+import com.moviebooking.form.PaymentForm;
 
 public interface BookingService {
-	Booking saveBooking(Long movieId, BookingForm form);
+	BookingRequest saveBookingReq(Long movieId, BookingForm form);
+	List<BookingRequest> getAllBookings();
 	
-	List<Booking> getAllBookings();
+	Booking createBooking(BookingRequest bookingRequest, PaymentForm paymentform);
+	List<Booking> getAllPayments();
+	
 }
